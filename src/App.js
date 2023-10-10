@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FiRefreshCcw } from 'react-icons/fi';
 import UserInfo from './components/UserInfo';
+import Footer from './components/Footer';
 
 function App() {
   const [userData, setUserData] = useState(null);
@@ -77,6 +78,7 @@ function App() {
         </div>
       </form>
       {userData && <UserInfo userData={userData} />}
+      <Footer />
     </div>
   );
 }
