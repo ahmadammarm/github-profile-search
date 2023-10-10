@@ -6,7 +6,8 @@ const Input = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit()
+    const username = e.target[0].value
+    onSubmit(username);
   }
 
   return (
@@ -17,7 +18,14 @@ const Input = ({
         mt-10
         mb-10
     '> 
-      <form>
+      <form 
+      handleSubmit={handleSubmit}
+      className='
+        flex
+        items-center
+        justify-center
+        '
+      >
         <input type="text" autoComplete='off' placeholder='Enter a Github Username' className='
             border
             border-gray-300
