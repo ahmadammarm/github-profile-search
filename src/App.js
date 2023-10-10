@@ -56,7 +56,9 @@ function App() {
             rounded-md
             px-4
             py-2
-            hover:bg-gray-900
+            hover:bg-gray-700
+            transition
+            duration-500
             ml-1">
             Get User
           </button>
@@ -66,7 +68,9 @@ function App() {
             rounded-md
             px-4
             py-2
-            hover:bg-gray-900
+            hover:bg-gray-700
+            transition
+            duration-500
             ml-1">
             <FiRefreshCcw />
           </button>
