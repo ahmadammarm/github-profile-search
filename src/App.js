@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FiRefreshCcw } from 'react-icons/fi';
 import UserInfo from './components/UserInfo';
 
 function App() {
@@ -8,6 +9,9 @@ function App() {
     const userResponse = await fetch(`https://api.github.com/users/${username}`);
     const userJson = await userResponse.json();
     setUserData(userJson);
+  };
+  const handleRefresh = () => {
+    window.location.reload(); // Ini akan memuat ulang halaman
   };
 
   return (
@@ -23,7 +27,6 @@ function App() {
         font-semibold
         text-gray-800
         mb-10
-
       '>Github User Searcher</h2>
       <form
         onSubmit={(e) => {
@@ -57,7 +60,7 @@ function App() {
             ml-1">
             Get User
           </button>
-          <button type="submit" className="
+          <button type="button" onClick={handleRefresh} className="
             bg-gray-800
             text-white
             rounded-md
@@ -65,9 +68,8 @@ function App() {
             py-2
             hover:bg-gray-900
             ml-1">
-            Refresh
+            <FiRefreshCcw />
           </button>
-          
         </div>
       </form>
       {userData && <UserInfo userData={userData} />}
