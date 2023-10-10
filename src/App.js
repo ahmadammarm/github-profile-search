@@ -11,7 +11,7 @@ function App() {
     setUserData(userJson);
   };
   const handleRefresh = () => {
-    window.location.reload(); // Ini akan memuat ulang halaman
+    window.location.reload();
   };
 
   return (

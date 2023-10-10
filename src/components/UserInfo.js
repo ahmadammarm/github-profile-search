@@ -27,7 +27,7 @@ function UserInfo({ userData }) {
           font-semibold
           text-white
           mb-10
-        ">Profile Information</div>
+        ">User Information</div>
         <div className="
           flex
           items-center
@@ -151,7 +151,7 @@ function UserInfo({ userData }) {
       <br /><br />
       <div id="long-info">
         <table className="table table-reponsive table-striped table-hover">
-          <caption>Informasi Pengguna</caption>
+          <caption>User Details</caption>
           <tbody>
             <tr>
               <td>Nama:</td>
