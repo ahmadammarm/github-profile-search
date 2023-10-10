@@ -2,30 +2,64 @@ import React from 'react';
 
 function UserInfo({ userData }) {
   return (
-    <div>
-      <div className="panel panel-default">
-        <div className="panel-heading">Informasi Profil</div>
-        <div className="panel-body" id="panel-body">
-          <div className="row">
-            <div className="col-md-12 text-center">
+    <div className='
+      flex
+      items-center
+      justify-center
+      flex-col
+      pt-10
+    '>
+      <div className="
+        text-center
+        bg-gray-800
+        text-white
+        rounded-md
+        px-4
+        py-2
+        hover:bg-gray-900
+        ml-1
+      ">
+        <div className="
+          text-3xl
+          font-semibold
+          text-white
+          mb-10
+        ">Profile Information</div>
+        <div className="
+          flex
+          items-center
+          justify-center
+          flex-col
+        " id="panel-body">
               <img
-                className="img img-responsive rounded-circle"
+                className="
+                  rounded-full
+                  border-4
+                  border-gray-300
+                  mb-5
+                "
                 src={userData.avatar_url}
                 height="120"
                 width="120"
                 alt="avatar"
               />
-            </div>
-          </div>
-          <br />
-          <div className="row">
-            <div className="col-md-12" id="short-info">
-              <table>
+          <div className="
+            flex
+            items-center
+            justify-center
+            flex-col
+          ">
+              <table className='
+                table
+                table-responsive
+                table-striped
+                table-hover
+              '>
                 <thead>
                   <tr>
-                    <th style={{ color: 'white' }}>Pengikut&nbsp;</th>
-                    <th style={{ color: 'white' }}>Repositori&nbsp;</th>
-                    <th style={{ color: 'white' }}>Mengikuti&nbsp;</th>
+                    <th>Followers&nbsp;</th>
+                    <th>Repositories&nbsp;</th>
+                    <th>Followed&nbsp;</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -36,7 +70,6 @@ function UserInfo({ userData }) {
                   </tr>
                 </tbody>
               </table>
-            </div>
           </div>
         </div>
       </div>
