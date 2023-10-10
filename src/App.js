@@ -1,24 +1,76 @@
-import Input from "./components/Input";
+import React, { useState } from 'react';
+import UserInfo from './components/UserInfo';
 
 function App() {
+  const [userData, setUserData] = useState(null);
+
+  const getData = async (username) => {
+    const userResponse = await fetch(`https://api.github.com/users/${username}`);
+    const userJson = await userResponse.json();
+    setUserData(userJson);
+  };
+
   return (
     <div className="
       flex
-      flex-col
       items-center
       justify-center
-      mt-10
-      mb-10
+      flex-col
+      pt-10
     ">
-      <h3 className="
-        text-2xl
+      <h2 className='
+        text-3xl
+        font-semibold
         text-gray-800
-        font-bold
-        mb-5
-      ">
-        Github User Searcher
-      </h3>
-      <Input />
+        mb-10
+
+      '>Github User Searcher</h2>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          const username = e.target.username.value;
+          getData(username);
+        }}
+      >
+        <div className="form-group">
+          <input
+            type="text"
+            className="border
+            border-gray-300
+            rounded-l
+            px-4
+            py-2
+            w-80"
+            id="username"
+            name="username"
+            aria-describedby="username"
+            placeholder="Enter your github username"
+            autoComplete="off"
+          />
+          <button type="submit" className="
+            bg-gray-800
+            text-white
+            rounded-md
+            px-4
+            py-2
+            hover:bg-gray-900
+            ml-1">
+            Get User
+          </button>
+          <button type="submit" className="
+            bg-gray-800
+            text-white
+            rounded-md
+            px-4
+            py-2
+            hover:bg-gray-900
+            ml-1">
+            Refresh
+          </button>
+          
+        </div>
+      </form>
+      {userData && <UserInfo userData={userData} />}
     </div>
   );
 }
