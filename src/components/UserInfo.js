@@ -85,6 +85,7 @@ function UserInfo({ userData }) {
                       py-2
                       ml-1
                       border-2
+                      mr-1
                     '>Followers&nbsp;</th>
                     <th className='
                       text-center
@@ -108,11 +109,39 @@ function UserInfo({ userData }) {
                     '>Followed&nbsp;</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className='
+                  text-center
+                  bg-gray-800
+                  text-white
+                  rounded-md
+                  px-4
+                  py-2
+                '>
                   <tr>
-                    <td style={{ color: 'white' }}>{userData.followers}</td>
-                    <td style={{ color: 'white' }}>{userData.public_repos}</td>
-                    <td style={{ color: 'white' }}>{userData.following}</td>
+                    <td className='
+                      text-center
+                      mt-3
+                      border-2
+                      border-gray-300
+                      border-solid
+                      rounded-md
+                    '>{userData.followers}</td>
+                    <td className='
+                      text-center
+                      mt-3
+                      border-2
+                      border-gray-300
+                      border-solid
+                      rounded-md
+                    '>{userData.public_repos}</td>
+                    <td className='
+                      text-center
+                      mt-3
+                      border-2
+                      border-gray-300
+                      border-solid
+                      rounded-md
+                    '>{userData.following}</td>
                   </tr>
                 </tbody>
               </table>
