@@ -17,6 +17,9 @@ function UserInfo({ userData }) {
         px-4
         py-2
         hover:bg-gray-900
+        transition
+        duration-500
+        ease-in-out
         ml-1
       ">
         <div className="
@@ -55,11 +58,54 @@ function UserInfo({ userData }) {
                 table-striped
                 table-hover
               '>
-                <thead>
-                  <tr>
-                    <th>Followers&nbsp;</th>
-                    <th>Repositories&nbsp;</th>
-                    <th>Followed&nbsp;</th>
+                <thead className='
+                  text-center
+                  bg-gray-800
+                  text-white
+                  rounded-md
+                  px-4
+                  py-2
+                  ml-1
+                '>
+                  <tr className='
+                    text-center
+                    bg-gray-800
+                    text-white
+                    px-4
+                    py-2
+                    ml-1
+                    rounded-md                   
+                  '>
+                    <th className='
+                      text-center
+                      bg-gray-800
+                      text-white
+                      rounded-md
+                      px-4
+                      py-2
+                      ml-1
+                      border-2
+                    '>Followers&nbsp;</th>
+                    <th className='
+                      text-center
+                      bg-gray-800
+                      text-white
+                      rounded-md
+                      px-4
+                      py-2
+                      ml-1
+                      border-2
+                    '>Repositories&nbsp;</th>
+                    <th className='
+                      text-center
+                      bg-gray-800
+                      text-white
+                      rounded-md
+                      px-4
+                      py-2
+                      ml-1
+                      border-2
+                    '>Followed&nbsp;</th>
                   </tr>
                 </thead>
                 <tbody>
