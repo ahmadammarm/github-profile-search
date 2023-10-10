@@ -1,8 +1,6 @@
 import React from 'react'
 
-const UserInfo = ({
-    onSubmit
-}) => {
+const UserInfo = () => {
   return (
     <div>
       

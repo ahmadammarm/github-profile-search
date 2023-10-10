@@ -1,6 +1,14 @@
 import React from 'react'
 
-const Input = () => {
+const Input = ({
+  onSubmit
+}) => {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit()
+  }
+
   return (
     <div className='
         flex
