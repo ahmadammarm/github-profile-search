@@ -16,7 +16,7 @@ function App() {
         font-bold
         mb-5
       ">
-        Github User Generator
+        Github User Searcher
       </h3>
       <Input />
     </div>
