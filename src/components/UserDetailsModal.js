@@ -33,6 +33,7 @@ const UserDetailsModal = ({ userData, onClose }) => {
         '>
           <p className='mb-2 mt-2'>Name : {userData.name}</p>
           <p className='mb-2 mt-2'>Username : {userData.login}</p>
+          <p className='mb-2 mt-2'>Created At : {userData.created_at}</p>
           <p className='mb-2 mt-2'>Location : {userData.location}</p>
           <p className='mb-2 mt-2'>Public Repositories : {userData.public_repos}</p>
           <p className='mb-2 mt-2'>Company : {userData.company}</p>
