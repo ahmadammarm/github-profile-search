@@ -24,21 +24,27 @@ const UserDetailsModal = ({ userData, onClose }) => {
         " onClick={onClose}>&times;</span>
         <div className='
           text-white
-          text-xl
+          text-md
           mb-2
           px-4
           py-2
           flex
           flex-col
         '>
-          <p>Name : {userData.name}</p>
-          <p>Username : {userData.login}</p>
-          <p>Location : {userData.location}</p>
-          <p>Followers : {userData.followers}</p>
-          <p>Following : {userData.following}</p>
-          <p>Public Repositories : {userData.public_repos}</p>
-          <p>Public Gists : {userData.public_gists}</p>
-          <p>Company : {userData.company}</p>
+          <p className='mb-2 mt-2'>Name : {userData.name}</p>
+          <p className='mb-2 mt-2'>Username : {userData.login}</p>
+          <p className='mb-2 mt-2'>Location : {userData.location}</p>
+          <p className='mb-2 mt-2'>Public Repositories : {userData.public_repos}</p>
+          <p className='mb-2 mt-2'>Company : {userData.company}</p>
+          <p className='mb-2 mt-2'>Link: <a href={userData.html_url} target='blank'
+          className='
+          text-blue-400
+          hover:text-blue-600
+          transition
+          duration-500
+          ease-in-out
+          '
+          >{userData.html_url}</a></p>
 
         </div>
         
