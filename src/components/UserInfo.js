@@ -30,7 +30,7 @@ function UserInfo({ userData }) {
         text-white
         rounded-md
         px-4
-        py-2
+        py-3
         hover:bg-gray-900
         transition
         duration-500

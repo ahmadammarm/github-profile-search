@@ -23,7 +23,7 @@ function App() {
     setTimeout(() => {
       window.location.reload();
       setIsLoading(false);
-    }, 3000);
+    }, 2000);
   };
 
   return (
@@ -32,7 +32,7 @@ function App() {
       items-center
       justify-center
       flex-col
-      pt-10
+      pt-6
     ">
       <h2 className='
         text-3xl

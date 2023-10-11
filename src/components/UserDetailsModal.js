@@ -46,7 +46,6 @@ const UserDetailsModal = ({ userData, onClose }) => {
           '
           >{userData.html_url}</a></p>
         </div>
-        
       </div>
     </div>
   );
