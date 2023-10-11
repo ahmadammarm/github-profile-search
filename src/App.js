@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { FiRefreshCcw } from 'react-icons/fi';
 import UserInfo from './components/UserInfo';
+import UserDetailsModal from './components/UserDetailsModal';
 // import Footer from './components/Footer';
 
 function App() {
   const [userData, setUserData] = useState(null);
+  const [showUserDetails] = useState(false);
 
   const getData = async (username) => {
     const userResponse = await fetch(`https://api.github.com/users/${username}`);
@@ -48,7 +50,7 @@ function App() {
             id="username"
             name="username"
             aria-describedby="username"
-            placeholder="Enter your github username"
+            placeholder="Enter a github username"
             autoComplete="off"
           />
           <button type="submit" className="
@@ -78,6 +80,7 @@ function App() {
         </div>
       </form>
       {userData && <UserInfo userData={userData} />}
+      {showUserDetails && <UserDetailsModal userData={userData} />}
       {/* <Footer /> */}
     </div>
   );

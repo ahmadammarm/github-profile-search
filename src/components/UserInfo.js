@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import UserDetailsModal from "./UserDetailsModal";
+import { FiArrowDown } from "react-icons/fi";
 
 function UserInfo({ userData }) {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
   return (
     <div
       className="
@@ -34,7 +45,7 @@ function UserInfo({ userData }) {
           mb-10
         "
         >
-          User Information
+          {userData.name}
         </div>
         <div
           className="
@@ -195,34 +206,30 @@ function UserInfo({ userData }) {
       </div>
       <br />
       <br />
-      <div
-        className="
-        text-center
-        bg-gray-800
-        text-white
-        rounded-md
-        px-4
-        py-2
-        hover:bg-gray-900
-        transition
-        duration-500
-        ease-in-out
-        ml-1
-      "
-      >
         <button className="
+        bg-gray-800
           text-white
           rounded-md
           px-4
-          py-1
+          py-2
           hover:bg-gray-900
           transition
           duration-500
           ease-in-out
-        ">
-          User Details
+          flex
+          flex-row
+        "
+        onClick={handleOpenModal}>
+          User Details <FiArrowDown className="
+          ml-2
+          mt-1
+          text-white
+          " />
         </button>
-      </div>
+
+        {showModal && (
+        <UserDetailsModal userData={userData} onClose={handleCloseModal} />
+      )}
     </div>
   );
 }
