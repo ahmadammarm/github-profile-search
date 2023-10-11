@@ -3,18 +3,27 @@ import { FiRefreshCcw } from 'react-icons/fi';
 import UserInfo from './components/UserInfo';
 import UserDetailsModal from './components/UserDetailsModal';
 import Footer from './components/Footer';
+import Loader from './components/Loader'; 
 
 function App() {
   const [userData, setUserData] = useState(null);
   const [showUserDetails] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const getData = async (username) => {
+    setIsLoading(true);
     const userResponse = await fetch(`https://api.github.com/users/${username}`);
     const userJson = await userResponse.json();
     setUserData(userJson);
+    setIsLoading(false);
   };
+
   const handleRefresh = () => {
-    window.location.reload();
+    setIsLoading(true);
+    setTimeout(() => {
+      window.location.reload();
+      setIsLoading(false);
+    }, 3000);
   };
 
   return (
@@ -89,6 +98,7 @@ function App() {
         </div>
       </form>
       <Footer />
+      {isLoading && <Loader />}
       {userData && <UserInfo userData={userData} />}
       {showUserDetails && <UserDetailsModal userData={userData} />}
     </div>
