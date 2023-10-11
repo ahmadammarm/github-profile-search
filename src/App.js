@@ -89,7 +89,7 @@ function App() {
             rounded-md
             px-4
             py-2
-            hover:bg-gray-700
+            hover:bg-teal-700
             transition
             duration-500
             ml-1">
