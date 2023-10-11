@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from "react";
 import UserDetailsModal from "./UserDetailsModal";
 import { FiArrowDown } from "react-icons/fi";
@@ -66,7 +67,6 @@ function UserInfo({ userData }) {
             src={userData.avatar_url}
             height="120"
             width="120"
-            alt="avatar"
           />
           <div
             className="
