@@ -36,7 +36,7 @@ const UserDetailsModal = ({ userData, onClose }) => {
           <p className='mb-2 mt-2'>Location : {userData.location}</p>
           <p className='mb-2 mt-2'>Public Repositories : {userData.public_repos}</p>
           <p className='mb-2 mt-2'>Company : {userData.company}</p>
-          <p className='mb-2 mt-2'>Link: <a href={userData.html_url} target='blank'
+          <p className='mb-2 mt-2'>Link : <a href={userData.html_url} target='blank'
           className='
           text-blue-400
           hover:text-blue-600
@@ -45,7 +45,6 @@ const UserDetailsModal = ({ userData, onClose }) => {
           ease-in-out
           '
           >{userData.html_url}</a></p>
-
         </div>
         
       </div>
