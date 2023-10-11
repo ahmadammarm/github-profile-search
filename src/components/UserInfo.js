@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import UserDetailsModal from "./UserDetailsModal";
 import { FiArrowDown } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 function UserInfo({ userData }) {
   const [showModal, setShowModal] = useState(false);
@@ -14,7 +15,16 @@ function UserInfo({ userData }) {
     setShowModal(false);
   };
   return (
-    <div
+    <motion.div
+    initial={{ scale: 0 }}
+    animate={{ rotate: 360, scale: 1 }}
+    transition={{
+      type: "spring",
+      stiffness: 260,
+      damping: 20
+    }}
+    >
+      <div
       className="
       flex
       items-center
@@ -231,6 +241,7 @@ function UserInfo({ userData }) {
       )}
       <br/>
     </div>
+    </motion.div>
   );
 }
 

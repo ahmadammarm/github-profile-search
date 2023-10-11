@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { FiRefreshCcw } from 'react-icons/fi';
-import UserInfo from './components/UserInfo';
-import UserDetailsModal from './components/UserDetailsModal';
-import Footer from './components/Footer';
-import Loader from './components/Loader'; 
+import React, { useState } from "react";
+import { FiRefreshCcw } from "react-icons/fi";
+import UserInfo from "./components/UserInfo";
+import UserDetailsModal from "./components/UserDetailsModal";
+import Footer from "./components/Footer";
+import Loader from "./components/Loader";
+import { motion } from "framer-motion";
 
 function App() {
   const [userData, setUserData] = useState(null);
@@ -12,34 +13,40 @@ function App() {
 
   const getData = async (username) => {
     setIsLoading(true);
-    const userResponse = await fetch(`https://api.github.com/users/${username}`);
+    const userResponse = await fetch(
+      `https://api.github.com/users/${username}`
+    );
     const userJson = await userResponse.json();
     setUserData(userJson);
     setIsLoading(false);
   };
 
   const handleRefresh = () => {
-    setIsLoading(true);
     setTimeout(() => {
       window.location.reload();
-      setIsLoading(false);
-    }, 2000);
+    },);
   };
 
   return (
-    <div className="
+    <div
+      className="
       flex
       items-center
       justify-center
       flex-col
       pt-6
-    ">
-      <h2 className='
+    "
+    >
+      <h2
+        className="
         text-3xl
         font-semibold
         text-gray-800
         mb-10
-      '>Github Profile Searcher</h2>
+      "
+      >
+        Github Profile Searcher
+      </h2>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -71,7 +78,9 @@ function App() {
             placeholder="Enter a github username"
             autoComplete="off"
           />
-          <button type="submit" className="
+          <button
+            type="submit"
+            className="
             bg-gray-800
             text-white
             rounded-md
@@ -80,10 +89,14 @@ function App() {
             hover:bg-gray-700
             transition
             duration-500
-            ml-1">
+            ml-1"
+          >
             Get User
           </button>
-          <button type="button" onClick={handleRefresh} className="
+          <button
+            type="button"
+            onClick={handleRefresh}
+            className="
             bg-teal-800
             text-white
             rounded-md
@@ -92,14 +105,24 @@ function App() {
             hover:bg-teal-700
             transition
             duration-500
-            ml-1">
+            ml-1"
+          >
             <FiRefreshCcw />
           </button>
         </div>
       </form>
       <Footer />
       {isLoading && <Loader />}
-      {userData && <UserInfo userData={userData} />}
+      {userData && !isLoading && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ type: "spring", stiffness: 260, damping: 20 }}
+        >
+          <UserInfo userData={userData} />
+        </motion.div>
+      )}
       {showUserDetails && <UserDetailsModal userData={userData} />}
     </div>
   );
