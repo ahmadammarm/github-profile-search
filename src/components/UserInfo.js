@@ -205,7 +205,6 @@ function UserInfo({ userData }) {
         </div>
       </div>
       <br />
-      <br />
         <button className="
         bg-gray-800
           text-white
@@ -230,6 +229,7 @@ function UserInfo({ userData }) {
         {showModal && (
         <UserDetailsModal userData={userData} onClose={handleCloseModal} />
       )}
+      <br/>
     </div>
   );
 }

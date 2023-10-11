@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FiRefreshCcw } from 'react-icons/fi';
 import UserInfo from './components/UserInfo';
 import UserDetailsModal from './components/UserDetailsModal';
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 
 function App() {
   const [userData, setUserData] = useState(null);
@@ -38,7 +38,7 @@ function App() {
           getData(username);
         }}
       >
-        <div className="form-group">
+        <div>
           <input
             type="text"
             className="border
@@ -46,7 +46,8 @@ function App() {
             rounded-l
             px-4
             py-2
-            w-80"
+            w-80
+            "
             id="username"
             name="username"
             aria-describedby="username"
@@ -66,7 +67,7 @@ function App() {
             Get User
           </button>
           <button type="button" onClick={handleRefresh} className="
-            bg-gray-800
+            bg-teal-800
             text-white
             rounded-md
             px-4
@@ -79,9 +80,9 @@ function App() {
           </button>
         </div>
       </form>
+      <Footer />
       {userData && <UserInfo userData={userData} />}
       {showUserDetails && <UserDetailsModal userData={userData} />}
-      {/* <Footer /> */}
     </div>
   );
 }
