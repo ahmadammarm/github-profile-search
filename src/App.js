@@ -30,7 +30,7 @@ function App() {
         font-semibold
         text-gray-800
         mb-10
-      '>Github User Searcher</h2>
+      '>Github Profile Searcher</h2>
       <form
         onSubmit={(e) => {
           e.preventDefault();
