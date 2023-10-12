@@ -10,12 +10,15 @@ const UserDetailsModal = ({ userData, onClose }) => {
       mt-10
     ">
       <div className="
-        bg-gray-900
+        bg-white
+        border-2
+        border-gray-900
+        border-solid
         rounded-md
         w-80
       ">
         <span className="
-          text-white
+          text-gray-900
           text-2xl
           float-right
           mr-2
@@ -23,7 +26,7 @@ const UserDetailsModal = ({ userData, onClose }) => {
           cursor-pointer
         " onClick={onClose}>&times;</span>
         <div className='
-          text-white
+          text-gray-900
           text-md
           mb-2
           px-4
@@ -31,14 +34,15 @@ const UserDetailsModal = ({ userData, onClose }) => {
           flex
           flex-col
         '>
-          <p className='mb-2 mt-2'>Name : {userData.name}</p>
-          <p className='mb-2 mt-2'>Username : {userData.login}</p>
-          <p className='mb-2 mt-2'>Created At : {userData.created_at}</p>
-          <p className='mb-2 mt-2'>Location : {userData.location}</p>
-          <p className='mb-2 mt-2'>Public Repositories : {userData.public_repos}</p>
-          <p className='mb-2 mt-2'>Company : {userData.company}</p>
-          <p className='mb-2 mt-2'>Link : <a href={userData.html_url} target='blank'
+          <p className='mb-2 mt-2 font-bold'>Name : <span className='font-semibold'>{userData.name}</span></p>
+          <p className='mb-2 mt-2 font-bold'>Username : <span className='font-semibold'>{userData.login}</span></p>
+          <p className='mb-2 mt-2 font-bold'>Created at : <span className='font-semibold'>{userData.created_at}</span></p>
+          <p className='mb-2 mt-2 font-bold'>Location : <span className='font-semibold'>{userData.location}</span></p>
+          <p className='mb-2 mt-2 font-bold'>Public Repositories : <span className='font-semibold'>{userData.public_repos}</span></p>
+          <p className='mb-2 mt-2 font-bold'>Company : <span className='font-semibold'>{userData.company}</span></p>
+          <p className='mb-2 mt-2 font-bold'>Link : <a href={userData.html_url} target='blank'
           className='
+          font-semibold
           text-blue-400
           hover:text-blue-600
           transition

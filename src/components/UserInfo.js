@@ -36,23 +36,22 @@ function UserInfo({ userData }) {
       <div
         className="
         text-center
-        bg-gray-800
-        text-white
+        bg-white
         rounded-md
         px-4
         py-3
-        hover:bg-gray-900
-        transition
-        duration-500
-        ease-in-out
         ml-1
+        border-2
+        border-gray-900
+        border-solid
+        shadow-xl
       "
       >
         <div
           className="
           text-3xl
           font-semibold
-          text-white
+          text-gray-900
           mb-10
         "
         >
@@ -71,7 +70,7 @@ function UserInfo({ userData }) {
             className="
                   rounded-full
                   border-4
-                  border-gray-300
+                  border-gray-900
                   mb-5
                 "
             src={userData.avatar_url}
