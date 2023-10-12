@@ -4,27 +4,36 @@ import UserInfo from "./components/UserInfo";
 import UserDetailsModal from "./components/UserDetailsModal";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
+import NotFound from "./components/NotFound";
 import { motion } from "framer-motion";
 
 function App() {
   const [userData, setUserData] = useState(null);
-  const [showUserDetails] = useState(false);
+  // eslint-disable-next-line no-unused-vars
+  const [showUserDetails, setShowUserDetails] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [userFound, setUserFound] = useState(true);
 
   const getData = async (username) => {
     setIsLoading(true);
     const userResponse = await fetch(
       `https://api.github.com/users/${username}`
     );
-    const userJson = await userResponse.json();
-    setUserData(userJson);
-    setIsLoading(false);
+    if (userResponse.ok) {
+      const userJson = await userResponse.json();
+      setUserData(userJson);
+      setIsLoading(false);
+      setUserFound(true);
+    } else {
+      setIsLoading(false);
+      setUserFound(false);
+    }
   };
 
   const handleRefresh = () => {
     setTimeout(() => {
       window.location.reload();
-    },);
+    });
   };
 
   return (
@@ -112,18 +121,24 @@ function App() {
         </div>
       </form>
       <Footer />
-      {isLoading && <Loader />}
-      {userData && !isLoading && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ type: "spring", stiffness: 260, damping: 20 }}
-        >
-          <UserInfo userData={userData} />
-        </motion.div>
+      {userFound ? (
+        <>
+          {isLoading && <Loader />}
+          {userData && !isLoading && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            >
+              <UserInfo userData={userData} />
+            </motion.div>
+          )}
+          {showUserDetails && <UserDetailsModal userData={userData} />}
+        </>
+      ) : (
+        <NotFound />
       )}
-      {showUserDetails && <UserDetailsModal userData={userData} />}
     </div>
   );
 }
