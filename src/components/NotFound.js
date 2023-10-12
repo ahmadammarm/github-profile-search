@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { BiError } from 'react-icons/bi';
 
 const NotFound = () => {
   return (
@@ -13,7 +14,7 @@ const NotFound = () => {
         py-10
         text-2xl
     '>
-      Profile Not Found
+      <BiError /> Profile Not Found
     </div>
   )
 }
