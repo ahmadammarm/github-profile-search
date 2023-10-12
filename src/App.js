@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Loader from "./components/Loader";
 import NotFound from "./components/NotFound";
 import { motion } from "framer-motion";
+import "./App.css";
 
 function App() {
   const [userData, setUserData] = useState(null);
@@ -57,6 +58,7 @@ function App() {
         Github Profile Searcher
       </h2>
       <form
+      className="input-form"
         onSubmit={(e) => {
           e.preventDefault();
           const username = e.target.username.value;

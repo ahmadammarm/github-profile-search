@@ -1,0 +1,12 @@
+/* Query Untuk Input Form Responsive */
+
+@media screen and (max-width: 768px) {
+    .input-form input {
+        width: 100%;
+        margin-bottom: 10px;
+        
+    }
+    .input-form button {
+        margin: 3px;
+    }
+}
