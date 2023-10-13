@@ -7,7 +7,7 @@ import Loader from "./components/Loader";
 import NotFound from "./components/NotFound";
 import { motion } from "framer-motion";
 import "./App.css";
-import DarkMode from "./components/DarkMode";
+import DarkMode from "./components/DarkMode/DarkMode";
 
 function App() {
   const [userData, setUserData] = useState(null);
@@ -40,23 +40,24 @@ function App() {
 
   return (
     <div
-    className={`flex items-center justify-center flex-col pt-6 ${
+    className={`main flex items-center justify-center pt-3 flex-col min-h-screen ${
       isDarkMode ? "dark" : ""
     }`}
   >
       <h2
         className="
+        main
         text-3xl
         font-semibold
         text-gray-800
-        mb-10
+        mb-5
       "
       >
         Github Profile Searcher
       </h2>
-      <DarkMode setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode} />
+      <DarkMode />
       <form
-      className="input-form"
+      className="input-form mt-2"
         onSubmit={(e) => {
           e.preventDefault();
           const username = e.target.username.value;
@@ -66,8 +67,10 @@ function App() {
         <div>
           <input
             type="text"
-            className="border
+            className="
+            border
             border-gray-300
+            text-gray-600
             rounded-md
             px-4
             py-2
@@ -90,12 +93,12 @@ function App() {
           <button
             type="submit"
             className="
-            bg-gray-800
+            main-button
             text-white
             rounded-md
             px-4
             py-2
-            hover:bg-gray-700
+            hover:bg-gray-800
             transition
             duration-500
             ml-1"

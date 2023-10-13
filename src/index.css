@@ -6,4 +6,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+:root {
+  --body-background: #f1f1f1;
+  --body-color: #000;
+}
+
+[data-theme="dark"] {
+  --body-background: rgb(17, 24, 39);
+  --body-color: #fff;
 }

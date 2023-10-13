@@ -26,6 +26,7 @@ function UserInfo({ userData }) {
     >
       <div
       className="
+      main
       flex
       items-center
       justify-center
@@ -35,6 +36,7 @@ function UserInfo({ userData }) {
     >
       <div
         className="
+        main-info
         text-center
         bg-white
         rounded-md
@@ -49,6 +51,7 @@ function UserInfo({ userData }) {
       >
         <div
           className="
+          main-button
           text-3xl
           font-semibold
           text-gray-900
@@ -68,6 +71,7 @@ function UserInfo({ userData }) {
         >
           <img
             className="
+            main-info
                   rounded-full
                   border-4
                   border-gray-900
@@ -106,6 +110,7 @@ function UserInfo({ userData }) {
               >
                 <tr
                   className="
+
                     text-center
                     bg-gray-800
                     text-white
@@ -117,6 +122,7 @@ function UserInfo({ userData }) {
                 >
                   <th
                     className="
+                    main-button
                       text-center
                       bg-gray-800
                       text-white
@@ -132,6 +138,7 @@ function UserInfo({ userData }) {
                   </th>
                   <th
                     className="
+                    main-button
                       text-center
                       bg-gray-800
                       text-white
@@ -146,6 +153,7 @@ function UserInfo({ userData }) {
                   </th>
                   <th
                     className="
+                    main-button
                       text-center
                       bg-gray-800
                       text-white
@@ -173,6 +181,7 @@ function UserInfo({ userData }) {
                 <tr>
                   <td
                     className="
+                    main-button
                       text-center
                       mt-3
                       border-2
@@ -185,6 +194,7 @@ function UserInfo({ userData }) {
                   </td>
                   <td
                     className="
+                    main-button
                       text-center
                       mt-3
                       border-2
@@ -197,6 +207,7 @@ function UserInfo({ userData }) {
                   </td>
                   <td
                     className="
+                    main-button
                       text-center
                       mt-3
                       border-2
@@ -215,12 +226,14 @@ function UserInfo({ userData }) {
       </div>
       <br />
         <button className="
-        bg-gray-800
+        main-button
+        bg-gray-700
           text-white
           rounded-md
           px-4
           py-2
-          hover:bg-gray-900
+          hover:bg-gray-800
+          hover:text-gray-200
           transition
           duration-500
           ease-in-out
@@ -229,6 +242,8 @@ function UserInfo({ userData }) {
         "
         onClick={handleOpenModal}>
           User Details <FiArrowDown className="
+          hover:text-gray-200
+          main-arrow
           ml-2
           mt-1
           text-white

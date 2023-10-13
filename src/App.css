@@ -10,3 +10,33 @@
     }
 }
 
+.dark {
+    background-color: #2d3748;
+    color: #ffffff;
+  }
+  
+  .light {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+.main {
+    background-color: var(--body-background);
+    color: var(--body-color);
+}
+
+.main-button {
+    background-color: var(--body-color);
+    color: var(--body-background);
+    border: 1px solid var(--body-color);
+}
+
+.main-info {
+    background-color: var(--body-color);
+    color: var(--body-background);
+    border: 5px solid var(--body-background);
+}
+
+.main-arrow {
+    color: var(--body-background);
+}

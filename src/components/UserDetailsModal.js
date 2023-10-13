@@ -16,8 +16,10 @@ const UserDetailsModal = ({ userData, onClose }) => {
         border-solid
         rounded-md
         w-80
+        main-button
       ">
         <span className="
+        main-button
           text-gray-900
           text-2xl
           float-right
@@ -26,6 +28,7 @@ const UserDetailsModal = ({ userData, onClose }) => {
           cursor-pointer
         " onClick={onClose}>&times;</span>
         <div className='
+        main-button
           text-gray-900
           text-md
           mb-2
