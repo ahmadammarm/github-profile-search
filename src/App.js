@@ -99,6 +99,7 @@ function App() {
             px-4
             py-2
             hover:bg-gray-800
+            hover:text-white
             transition
             duration-500
             ml-1"
