@@ -32,6 +32,7 @@ function UserInfo({ userData }) {
       justify-center
       flex-col
       pt-10
+      rounded-md
     "
     >
       <div
@@ -39,13 +40,9 @@ function UserInfo({ userData }) {
         main-info
         text-center
         bg-white
-        rounded-md
         px-4
         py-3
         ml-1
-        border-2
-        border-gray-900
-        border-solid
         shadow-xl
       "
       >
