@@ -7,6 +7,7 @@ import Loader from "./components/Loader";
 import NotFound from "./components/NotFound";
 import { motion } from "framer-motion";
 import "./App.css";
+import DarkMode from "./components/DarkMode";
 
 function App() {
   const [userData, setUserData] = useState(null);
@@ -14,7 +15,7 @@ function App() {
   const [showUserDetails, setShowUserDetails] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [userFound, setUserFound] = useState(true);
-
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const getData = async (username) => {
     setIsLoading(true);
     const userResponse = await fetch(
@@ -39,14 +40,10 @@ function App() {
 
   return (
     <div
-      className="
-      flex
-      items-center
-      justify-center
-      flex-col
-      pt-6
-    "
-    >
+    className={`flex items-center justify-center flex-col pt-6 ${
+      isDarkMode ? "dark" : ""
+    }`}
+  >
       <h2
         className="
         text-3xl
@@ -57,6 +54,7 @@ function App() {
       >
         Github Profile Searcher
       </h2>
+      <DarkMode setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode} />
       <form
       className="input-form"
         onSubmit={(e) => {
@@ -133,10 +131,10 @@ function App() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ type: "spring", stiffness: 260, damping: 20 }}
             >
-              <UserInfo userData={userData} />
+              <UserInfo userData={userData} isDarkMode={isDarkMode} />
             </motion.div>
           )}
-          {showUserDetails && <UserDetailsModal userData={userData} />}
+          {showUserDetails && <UserDetailsModal userData={userData} isDarkMode={isDarkMode} />}
         </>
       ) : (
         <NotFound />
