@@ -10,6 +10,7 @@ Hope u happy to used it</p>
 # Featured in this project
 - Github username searcher
 - Github profile information and details
+- Dark and light mode layout
 
 
 
