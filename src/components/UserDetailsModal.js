@@ -39,6 +39,7 @@ const UserDetailsModal = ({ userData, onClose }) => {
         '>
           <p className='mb-2 mt-2 font-bold'>Name : <span className='font-semibold'>{userData.name}</span></p>
           <p className='mb-2 mt-2 font-bold'>Username : <span className='font-semibold'>{userData.login}</span></p>
+          <p className='mb-2 mt-2 font-bold'>Bio : <span className='font-semibold'>"{userData.bio}"</span></p>
           <p className='mb-2 mt-2 font-bold'>Created at : <span className='font-semibold'>{userData.created_at}</span></p>
           <p className='mb-2 mt-2 font-bold'>Location : <span className='font-semibold'>{userData.location}</span></p>
           <p className='mb-2 mt-2 font-bold'>Public Repositories : <span className='font-semibold'>{userData.public_repos}</span></p>

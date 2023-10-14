@@ -15,6 +15,7 @@ function App() {
   const [showUserDetails, setShowUserDetails] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [userFound, setUserFound] = useState(true);
+  // eslint-disable-next-line no-unused-vars
   const [isDarkMode, setIsDarkMode] = useState(false);
   const getData = async (username) => {
     setIsLoading(true);
